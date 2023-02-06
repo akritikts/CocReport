@@ -42,28 +42,63 @@ Following that, in the final component, we use the graph to identify the nodes t
 \begin{figure*}[h]
   \begin{minipage}{.33\textwidth}
     \centering
-    \includegraphics[width=5cm,height=5cm,keepaspectratio]{download.pdf}
+    \includegraphics[width=5cm,height=5.5cm,keepaspectratio]{plots/weiner_anger.pdf}
     \subcaption{Dominant Emotion: Anger}
   \end{minipage}%
   \begin{minipage}{.33\textwidth}
     \centering
-    \includegraphics[width=5cm,height=5cm,keepaspectratio]{fear_wie.pdf}
+    \includegraphics[width=5cm,height=5.5cm,keepaspectratio]{plots/weiner_fear.pdf}
     \subcaption{Dominant Emotion: Fear}
   \end{minipage}%
   \begin{minipage}{.33\textwidth}
     \centering
-    \includegraphics[width=5cm,height=5cm,keepaspectratio]{joy.pdf}
+    \includegraphics[width=5cm,height=5.5cm,keepaspectratio]{plots/weiner_joy.pdf}
     \subcaption{Dominant Emotion: Joy}
   \end{minipage}
  \medskip
   \begin{minipage}{.5\textwidth}
     \centering
-    \includegraphics[width=5cm,height=5cm,keepaspectratio]{love_wie.pdf}
+    \includegraphics[width=5cm,height=5.5cm,keepaspectratio]{plots/weiner_love.pdf}
     \subcaption{Dominant Emotion: Love}
   \end{minipage}%
   \begin{minipage}{.5\textwidth}
     \centering
-    \includegraphics[width=5cm,height=5cm,keepaspectratio]{sad_wie.pdf}
+    \includegraphics[width=5cm,height=5.5cm,keepaspectratio]{plots/weiner_sad.pdf}
+    \subcaption{Dominant Emotion: Sadness}
+  \end{minipage}
+  
+%   \includegraphics[width=5cm,height=5cm,keepaspectratio]{samples/sample_convv.png}
+%   \includegraphics[width=5cm,height=5cm,keepaspectratio]{samples/sample_conv_graphh.png}
+  \caption{Wiener Index of the influential nodes with respect to the percentage of emotions in the reply tree where the dominant emotion is (a) Anger (b) Fear (c) Joy (d) Love and (e) Sadness}
+  \label{SampleConvw}
+  \end{figure*}
+\subsection{Experimental Evaluation and Analysis}
+The structure and toxicity of Twitter conversations have been extensively researched. We use the findings from literature to validate the applicability of our framework. We do so based on three attributes: structural characteristics, emotions and virality, and the development of connective action.  It was observed that the toxicity of a reply tree increases with its size, width, and density. The percentage of angry tweet responses skyrockets at 40\% and continues to rise until it reaches 80\% (Figure-\ref{SampleConv} (a)). Because anger spreads faster than other emotions, the same pattern can be seen when comparing the percentage of emotions contained in the nodes. After identifying the conversation graph's influential nodes, we calculated their Wiener index with respect to the percentage of emotions contained in their reply trees. It was discovered that the Wiener index for anger tends to increase the most. It begins low and starts to rise as the percentage of anger in the reply tree increases. It peaks at 60\% anger in the reply tree nodes and then drops by a small value before plateauing at the end. This leads us to the conclusion that the influential node initially broadcasts a variety of emotions, and as the size of its reply tree and the percentage of anger grows, it transforms into a viral spread in which the nodes of this reply tree receive more back-and-forth engagement. 
+\begin{figure*}[h]
+  \begin{minipage}{.33\textwidth}
+    \centering
+    \includegraphics[width=5cm,height=5.5cm,keepaspectratio]{plots/dis_anger.pdf}
+    \subcaption{Dominant Emotion: Anger}
+  \end{minipage}%
+  \begin{minipage}{.33\textwidth}
+    \centering
+    \includegraphics[width=5cm,height=5.5cm,keepaspectratio]{plots/dis_fear.pdf}
+    \subcaption{Dominant Emotion: Fear}
+  \end{minipage}%
+  \begin{minipage}{.33\textwidth}
+    \centering
+    \includegraphics[width=5cm,height=5.5cm,keepaspectratio]{plots/dis_joy.pdf}
+    \subcaption{Dominant Emotion: Joy}
+  \end{minipage}
+ \medskip
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=5cm,height=5.5cm,keepaspectratio]{plots/dis_love.pdf}
+    \subcaption{Dominant Emotion: Love}
+  \end{minipage}%
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=5cm,height=5.5cm,keepaspectratio]{plots/dis_sad.pdf}
     \subcaption{Dominant Emotion: Sadness}
   \end{minipage}
   
@@ -72,10 +107,12 @@ Following that, in the final component, we use the graph to identify the nodes t
   \caption{Percentage distribution of emotions in the reply tree of influential nodes of conversations where the dominant emotion is (a) Anger (b) Fear (c) Joy (d) Love and (e) Sadness}
   \label{SampleConv}
   \end{figure*}
-\subsection{Experimental Evaluation and Analysis}
-The structure and toxicity of Twitter conversations have been extensively researched. We use the findings from literature to validate the applicability of our framework. We do so based on three attributes: structural characteristics, emotions and virality, and the development of connective action.  It was observed that the toxicity of a reply tree increases with its size, width, and density. The percentage of angry tweet responses skyrockets at 40\% and continues to rise until it reaches 80\% (Figure-\ref{SampleConv} (a)). Because anger spreads faster than other emotions, the same pattern can be seen when comparing the percentage of emotions contained in the nodes. After identifying the conversation graph's influential nodes, we calculated their Wiener index with respect to the percentage of emotions contained in their reply trees. It was discovered that the Wiener index for anger tends to increase the most. It begins low and starts to rise as the percentage of anger in the reply tree increases. It peaks at 60\% anger in the reply tree nodes and then drops by a small value before plateauing at the end. This leads us to the conclusion that the influential node initially broadcasts a variety of emotions, and as the size of its reply tree and the percentage of anger grows, it transforms into a viral spread in which the nodes of this reply tree receive more back-and-forth engagement. 
-
 When the user activity in the influential nodes was examined, it was discovered that the number of responses received by a tweet is directly proportional to the amount of emotion contained in the tweet. Although tweets expressing anger and love received the most responses, the majority of these responses were angry. Furthermore, tweets expressing love received the angriest or rage-inducing responses.
+
+Recently, the Wiener index has been used to analyse the structure of information diffusion, specifically to determine whether information spreads in a broadcast or viral manner \cite{saveski2021structure}, \cite{goel2016structural}. The Wiener index w(T) of a response tree T is defined as the average distance between all pairs of nodes in the tree. A low Wiener index is associated with the broadcast structure of diffusion, in which users mostly respond to the original tweet and there is little engagement among users, whereas a high Wiener index value is associated with viral spread, in which back-and-forth engagement among users is greater than the responses to the original tweet. 
+
+After identifying the conversation graph's influential nodes, we calculated their Wiener index with respect to the percentage of emotions contained in their reply trees. Figure-\ref{SampleConvw} shows the influential node's Wiener index (y-axis) versus the percentage (x-axis) of various emotions in the influential node's reply tree for each emotion. It was discovered that the Wiener index for anger tends to increase the most. It begins low and starts to rise as the percentage of anger in the reply tree increases. It peaks at 60\% anger in the reply tree nodes and then drops by a small value before plateauing at the end, as shown in Figure-\ref{SampleConvw} (a). This leads us to the conclusion that the influential node initially broadcasts a variety of emotions, and as the size of its reply tree and the percentage of anger grows, it transforms into a viral spread in which the nodes of this reply tree receive more back-and-forth engagement. Thereafter, once the percentage of anger becomes 60\%, due to the back-and-forth engagement in multiple nodes of this reply tree, the nodes start broadcasting the same emotion and hence pivot into a toxic conversation as the conversation is now concentrated in these few nodes leading to the propagation of anger. Although the pattern of the conversation pivoting from broadcast to viral and back to broadcasting can be seen across other emotions, as shown in Figure-\ref{SampleConvw}, the peaks converge much sooner (35-40\%) and at a higher value (10k) than anger (b, c, d and e). It emphasises the fact that anger spreads faster by convergent virality and earlier broadcasting. It is also clear that negative sentiments converge faster than positive ones. This could be because positive emotional expressions are bombarded with negativity, causing a shift in the distribution of emotions in the reply tree and a gradual shift in the form of transmission.
+
 
 \begin{table}[h]
 \caption{Comparison of proposed framework against Perspective API \cite{bworld}}
