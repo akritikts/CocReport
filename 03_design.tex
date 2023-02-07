@@ -111,6 +111,48 @@ When the user activity in the influential nodes was examined, it was discovered 
 
 Recently, the Wiener index has been used to analyse the structure of information diffusion, specifically to determine whether information spreads in a broadcast or viral manner \cite{saveski2021structure}, \cite{goel2016structural}. The Wiener index w(T) of a response tree T is defined as the average distance between all pairs of nodes in the tree. A low Wiener index is associated with the broadcast structure of diffusion, in which users mostly respond to the original tweet and there is little engagement among users, whereas a high Wiener index value is associated with viral spread, in which back-and-forth engagement among users is greater than the responses to the original tweet. 
 
+Table-\ref{tab:my-tablea} shows the average distribution of emotions and the number of unique users involved in influential node reply trees for each emotion represented by the influential node whereas Table-\ref{tab:my-tablec} displays the average difference (increase/decrease) in the distribution of emotions in the graph after calculating emotional propagation using the eImpact framework for each emotion represented by the influential node, as well as the initial percentage of the represented emotion.
+
+\begin{table}[h]
+\caption{Average distribution of emotions and the number of unique users in the reply trees of influential nodes}
+\label{tab:my-tablea}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lllllll}
+\hline
+\begin{tabular}[c]{@{}l@{}}Emotion represented \\ by influential node\end{tabular} &
+  \multicolumn{5}{l}{\begin{tabular}[c]{@{}l@{}}Average responses to an influential node\\ based on its emotion (\%)\end{tabular}} &
+  \begin{tabular}[c]{@{}l@{}}No. of unique \\ users\end{tabular} \\ \hline
+        & Anger & Fear & Love & Joy  & Sadness &   \\ \hline
+Anger   & 78.6  & 4.2  & 5.3  & 4.7  & 5.4     & 3 \\
+Fear    & 31.3  & 56.8 & 4.2  & 1.3  & 6.4     & 5 \\
+Joy     & 37.4  & 1.4  & 15.7 & 43.1 & 2.3     & 7 \\
+Love    & 81.3  & 1.2  & 8.9  & 6.7  & 1.6     & 7 \\
+Sadness & 32.8  & 13.2 & 8.7  & 2.4  & 42.6    & 4 \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[h]
+\caption{Average change in the distribution of emotions in the graph after calculating the propagation of emotions using the eImpact framework}
+\label{tab:my-tablec}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{llllllll}
+\hline
+\begin{tabular}[c]{@{}l@{}}Emotion represented\\ by the root node\end{tabular} &
+  \multicolumn{5}{l}{\begin{tabular}[c]{@{}l@{}}Average change in the distribution \\ of emotions (\%)\end{tabular}} &
+  \begin{tabular}[c]{@{}l@{}}Initial \% of\\ nodes for\\ the emotion\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}No. of nodes\\ in the graph\end{tabular} \\ \hline
+        & Anger & Fear & Joy   & Love  & Sadness &      &      \\ \hline
+Anger   & 27.6  & -7.4 & -12.8 & -13.4 & -4.1    & 38.3 & 3343 \\
+Fear    & -5.3  & 20.1 & -10.6 & -4.2  & 0.4     & 21.9 & 5493 \\
+Joy     & -3.2  & 4.2  & 15.4  & -2.7  & 0.6     & 23.4 & 5073 \\
+Love    & 1.7   & 2.8  & 0.3   & 12.5  & -3.4    & 20.8 & 4457 \\
+Sadness & -2.1  & 2.3  & -2.4  & -10.1 & 21.2    & 26.5 & 3623 \\ \hline
+\end{tabular}%
+}
+\end{table}
 After identifying the conversation graph's influential nodes, we calculated their Wiener index with respect to the percentage of emotions contained in their reply trees. Figure-\ref{SampleConvw} shows the influential node's Wiener index (y-axis) versus the percentage (x-axis) of various emotions in the influential node's reply tree for each emotion. It was discovered that the Wiener index for anger tends to increase the most. It begins low and starts to rise as the percentage of anger in the reply tree increases. It peaks at 60\% anger in the reply tree nodes and then drops by a small value before plateauing at the end, as shown in Figure-\ref{SampleConvw} (a). This leads us to the conclusion that the influential node initially broadcasts a variety of emotions, and as the size of its reply tree and the percentage of anger grows, it transforms into a viral spread in which the nodes of this reply tree receive more back-and-forth engagement. Thereafter, once the percentage of anger becomes 60\%, due to the back-and-forth engagement in multiple nodes of this reply tree, the nodes start broadcasting the same emotion and hence pivot into a toxic conversation as the conversation is now concentrated in these few nodes leading to the propagation of anger. Although the pattern of the conversation pivoting from broadcast to viral and back to broadcasting can be seen across other emotions, as shown in Figure-\ref{SampleConvw}, the peaks converge much sooner (35-40\%) and at a higher value (10k) than anger (b, c, d and e). It emphasises the fact that anger spreads faster by convergent virality and earlier broadcasting. It is also clear that negative sentiments converge faster than positive ones. This could be because positive emotional expressions are bombarded with negativity, causing a shift in the distribution of emotions in the reply tree and a gradual shift in the form of transmission.
 
 

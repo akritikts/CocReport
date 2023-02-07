@@ -67,8 +67,58 @@ They include experience-based design components which primarily focus on bio-fee
 \subsection{Recognising Digital Emotion Regulation}
 Methods of exploring DER in social media by combining a smartphone's front camera and touch sensor have also become popular. This data has been used to predict the participants' binary emotional states and can also detect the emotional state while passively using social media. The front camera has been used to measure the degree of joy for a phone session to discover unimodal and polymodal patterns of joy \cite{tag2022emotion}. Researchers contend that by using manipulated images which simulate the realistic image distortion occuring when a person's expressions are captured during phone usage, recognition systems rarely confused expressions of surprise, anger, happiness, and neutrality for other emotions. Attention-based LSTM (Long Short-Term Memory) has also been proposed for a user-independent mobile emotion recognition system that uses smartphone-only or wristband data \cite{yang2021behavioral}.
 
+\begin{table}[h]
+\caption{A summary of recent studies aimed at recognising Emotion Regulation in online environments}
+\label{tab:recog_table}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{llllll}
+\hline
+\textbf{Title} &
+  \textbf{Purpose} &
+  \textbf{\begin{tabular}[c]{@{}l@{}}Data used/ \\ parameters \\ monitored\end{tabular}} &
+  \textbf{\begin{tabular}[c]{@{}l@{}}Availability \\ of the dataset\end{tabular}} &
+  \textbf{\begin{tabular}[c]{@{}l@{}}Size of the \\ dataset\end{tabular}} &
+  \textbf{\begin{tabular}[c]{@{}l@{}}Availability of \\ a reproducible\\ model\end{tabular}} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Emotion trajectories\\ in smartphone use: \\ Towards recognizing\\ emotion regulation\\ in the wild \\ \cite{tag2022emotion}\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Present findings from a \\ field study that measured \\ how joy unfolds during \\ everyday smartphone use.\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Collected using a \\ customised smartphone\\ application that tracked \\ physical (facial) features\end{tabular} &
+  Not available &
+  \begin{tabular}[c]{@{}l@{}}The study \\ involved \\ 20 participants,\\ was carried out \\ for 14 days\end{tabular} &
+  NA \\ \hline
+\begin{tabular}[c]{@{}l@{}}Benchmarking \\ commercial emotion \\ detection systems \\ using realistic \\ distortions of facial\\ image datasets \\ \cite{yang2021benchmarking}\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Evaluate the performance\\ of commercial emotion\\ detection services\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Utilised 3 facial \\ expression based \\ datasets\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Used online \\ datasets \\ \href{https://psycnet.apa.org/doiLanding?doi=10.1037/a0023853
+}{(ADFES)}\\ \href{https://www.tandfonline.com/doi/abs/10.1080/02699930903485076
+}{(RaFD)}, and\\  \href{https://www.frontiersin.org/articles/10.3389/fpsyg.2014.01516/full
+}{(WSEFEP)}\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}838 pictures in\\ total\end{tabular} &
+  NA \\ \hline
+\begin{tabular}[c]{@{}l@{}}Behavioural and \\ Physiological Signals-\\ Based Deep Multimodal\\ Approach for Mobile \\ Emotion Recognition \\ \cite{yang2021behavioral}\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Propose a novel attention\\ -based LSTM system that\\  uses a combination of\\ sensors (front camera, \\ microphone, touch panel) \\ from a smartphone and \\ wristband\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Collected a dataset \\ using a smartphone \\ application where \\ the behavioural and \\ physiological \\ parameters were\\ taken into observation\end{tabular} &
+  Not available &
+  \begin{tabular}[c]{@{}l@{}}The study \\ involved 45\\ participants\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Described in\\  the paper\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}How Do You Feel \\ Online? Exploiting \\ Smartphone Sensors\\ to Detect Transitory\\ Emotions during Social \\ Media Use \\ \cite{ruensuk2020you}\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Explore the identification \\ of people's emotions \\ when they use social \\ media applications\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Collected a dataset \\ using various \\ (physical) motion\\ /eye-tracking\\ applications\end{tabular} &
+  Not available &
+  \begin{tabular}[c]{@{}l@{}}The study\\ involved 20\\ participants\end{tabular} &
+  NA \\ \hline
+\textbf{\begin{tabular}[c]{@{}l@{}}Encouraging Emotion \\ Regulation in Social \\ Media Conversations \\ through Self-Reflection\end{tabular}} &
+  \textbf{\begin{tabular}[c]{@{}l@{}}Identify the contexts\\ that need ER and\\ provide on the spot\\ support for the same\end{tabular}} &
+  \textbf{\begin{tabular}[c]{@{}l@{}}Utilised data \\ from Twitter \\ conversations\end{tabular}} &
+  \textbf{\begin{tabular}[c]{@{}l@{}}Publicly \\ available\end{tabular}} &
+  \textbf{\begin{tabular}[c]{@{}l@{}}Size of\\ the dataset:\\ 180K\end{tabular}} &
+  \textbf{\begin{tabular}[c]{@{}l@{}}Described in\\ the paper\end{tabular}} \\ \hline
+\end{tabular}%
+}
+\end{table}
 
 Aside from an individual's desire to regulate their emotions, the ER process involves their surroundings, a situational trigger for emotion, and their attempts to regulate that emotion. It is challenging to measure these variables in a lab setup, so studies have begun investigating ways to recognise them in the wild \cite{wadley2019use}, \cite{smith2022digital}, \cite{martin2021music}. To observe the change of emotions using facial expressions, the front camera of smartphones, touch sensors, eye trackers, and motion sensors have been used, both independently and in combination. A recent study used the device's front camera to measure the degree of joy throughout each phone session and divided people into three groups based on how likely they were to feel joy at the start of a session \cite{tag2022emotion}. Go-getters were users who desired a brief sigh of relief or rejoicing before turning on their phone, targeters were users who desired a uniform and gradually increasing joy as the session progressed, and explorers were users who experienced the polymodal joy that sees a gradual decline before locking the phone. Another study applied image manipulation to simulate the realistic image distortion that occurs when capturing a person's expressions for facial expression-based detection of digital emotion regulation \cite{yang2021benchmarking}, \cite{ruensuk2020you}. According to research, combining modalities improves the accuracy of affect detection in social media tasks.
+
+
 
 \subsection{Analysing Emotion Regulation in Social Media Conversations}
 Problematic use of social networking sites has been widely associated with maladaptive emotion regulation \cite{yang2020social}, \cite{zsido2021role}, \cite{liu2019adult}. According to observational studies on people's use of social media and digital platforms for emotion regulation, smartphone-mediated emotion regulation is effective in achieving desired affective states \cite{shi2023instant}. However, little research has been conducted to determine when this activity becomes harmful to online well-being. Kiskola et al. use design-based cues to trigger emotion regulation through self-reflection to target the practice of uncivil commenting on social networking sites \cite{kiskola2021applying}. To simulate the process of emotion regulation in social media addicts, Fokker et al. developed a second-order adaptive mental network model. They discovered that if cognitive therapy is successful in improving the regulation by reappraisal, the use of avoidance and suppression can be significantly reduced \cite{fokker2021second}. Another study discourages automatic moderation of online posts and comments while presenting seemingly effective, but problematic design explorations. Following the critical design ideology, they consider how to design conventions in social media could be changed without causing negative behavioural consequences \cite{loizides2020human}. Iqbal et al. look into the issue of verbal aggression online in the context of the BTS Army and find that when the responses are largely rude and irrelevant, the emotion regulation process that should allow the subject to contain their anger fails \cite{iqbal2022emotion}. Therefore, in this work, we propose to notify the user of their emotional impact on the conversation. In order to avoid discarding "what may happen" based on a comment, this work offers "what has happened" as a result of a comment.
@@ -78,3 +128,19 @@ Uncivil commentary contributes significantly to online toxicity. Content moderat
 
 \subsection{Supporting on-the-spot Digital Emotion Regulation}
 It makes sense that learning explicit emotion regulation calls for knowledge of the various strategies that can be employed in various situations as well as the performance of those strategies. That is, regulating one's emotions involves more than just having enough knowledge \cite{slovak2022designing}. An essential component of ER interventions is the transfer. Allowing people to better cope with daily situations, without ongoing support, is critical for long-term impact. One of the major gaps in existing non-technological interventions is a lack of transfer-enabling support in situ \cite{slovak2016scaffolding}, \cite{antle2018opening}, \cite{antle2019design}. Individual ER strategies are supported, but not equally (situation selection, situation modification, attentional deployment, cognitive change, and response modulation). The majority of interactive components across all delivery mechanisms target response modulation strategies, even though these are theoretically known to be less effective over time. Recent work suggests that digital technologies are already often used by participants for situation selection as part of everyday use. Therefore, in this research, we aim to build a context-based recommender to suggest appropriate emotion regulation strategies when the need for emotion regulation is identified. The goal here is to inform users involved in a conversation about the emotional impact of their actions and to gently nudge them towards a responsible mindset through repeated application of the same.
+
+\subsection{Research Gaps}
+\begin{itemize}
+    \item Lack of digital solutions for ER: Current emotion regulation tools include mood-based recommendation systems and reminders, which are only temporary and difficult to integrate into daily life. Furthermore, studies show that a combination of online media platforms and apps are used to perform digital emotion regulation. However, these apps or platforms have not been curated for the purpose. Innovative digital solutions that facilitate the transmission and development of emotion regulation practises will not only have a long-term impact, but will also boost social media usage. It is necessary to develop sophisticated tools that allow people to consider, evaluate, and self-diagnose the positive and negative outcomes of their digital activities. There is a lack of techniques for interaction design that use existing or new mechanisms to help users navigate emotional experience trajectories rather than providing recommendations based on their emotional state.
+    \item Lack of a prototype for synthesising data, contrast and comparison: The majority of research in the field of digital emotion regulation is based on field studies, ecological momentary assessments (EMA), or physiological sensors combined with facial data, as discussed earlier in the article. Due to their sensitive nature, these datasets cannot be shared, resulting in a lack of data to compare and contrast the results produced, as well as a lack of a common prototype for synthesising emotion regulation. The use of easily accessible data for studying DER will facilitate contrast and comparison.
+    \item Lack of a framework to detect/recognise DER online: Although the relevance of situation and context in the process of regulating digital emotions is widely acknowledged, little research in this area has been conducted through field studies and interviews. Understanding a user's online presence and connecting it to their approach to emotion regulation would provide new insights into how technology can help break down and personalise existing cognitive modules into manageable pieces. Empirical studies of people's usage of digital technologies to achieve desired emotional results are required to learn how users can be supported by digital media when undergoing emotion regulation. Because of the complexity of emotional expressions, a large portion of DER research presents qualitative results that are difficult to extend. This opens up opportunities for the use of machine learning and deep learning-based algorithms, which can be used to understand the habits, frequency, and intensity of DER practises.
+\end{itemize}
+
+
+\subsection{Research Questions}
+
+\begin{itemize}
+    \item How can we provide on-spot support for emotion regulation in online conversations, extending beyond pattern detection? How can we leverage online environments to promote efficient digital emotion regulation as a form of transferable skill instead of didactic information delivery? How can we break down and tailor effective emotion regulation learning for an individual user?
+    \item How can we quantify the expression of various emotions and the differences in their nature of dispersal and virility for social media activities? How can this quantification be used to define toxicity?
+    \item How can support for Emotion Regulation be expanded to include a variety of ER strategies rather than just suppression and reappraisal in all contexts? How can information delivery in online ER recommendation environments be customised for users and presented as a transferable skill?
+\end{itemize}
